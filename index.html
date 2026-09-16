@@ -4,75 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Feedback & Contact</title>
+    <title>TechConnect 2026 | Event Registration</title>
 
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #e0f2fe, #eef2ff);
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 450px;
-            padding: 35px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        h1 {
-            margin: 0 0 10px;
-            text-align: center;
+            background:
+                radial-gradient(circle at top left, #dbeafe, transparent 35%),
+                radial-gradient(circle at bottom right, #e0e7ff, transparent 35%),
+                #f8fafc;
+            padding: 40px 20px;
             color: #1e293b;
-            font-size: 30px;
         }
 
-        .subtitle {
-            margin: 0 0 30px;
-            text-align: center;
+        .main-container {
+            max-width: 1050px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(15, 23, 42, 0.15);
+        }
+
+        /* TOP EVENT SECTION */
+
+        .event-header {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+            padding: 45px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-header::before {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            top: -100px;
+            right: -60px;
+        }
+
+        .event-header::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            bottom: -90px;
+            left: -50px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 14px;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-header h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-header p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 650px;
+            opacity: 0.92;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* EVENT DETAILS */
+
+        .event-details {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .detail {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 14px 18px;
+            border-radius: 12px;
+            min-width: 150px;
+        }
+
+        .detail span {
+            display: block;
+            font-size: 12px;
+            opacity: 0.75;
+            margin-bottom: 5px;
+        }
+
+        .detail strong {
+            font-size: 14px;
+        }
+
+        /* FORM AREA */
+
+        .form-section {
+            padding: 45px;
+        }
+
+        .form-title {
+            margin-bottom: 28px;
+        }
+
+        .form-title h2 {
+            font-size: 25px;
+            margin-bottom: 7px;
+        }
+
+        .form-title p {
             color: #64748b;
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        .input-box {
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field.full {
+            grid-column: span 2;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 14px 15px;
-            margin-bottom: 18px;
             border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            outline: none;
-            font-size: 16px;
+            border-radius: 11px;
+            font-size: 14px;
             font-family: Arial, sans-serif;
+            outline: none;
+            background: white;
             transition: 0.3s;
         }
 
-        .input-box:focus {
-            border-color: #4285f4;
-            box-shadow: 0 0 8px rgba(66, 133, 244, 0.2);
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08);
         }
 
-        textarea.input-box {
-            height: 120px;
+        textarea {
+            height: 110px;
             resize: vertical;
         }
 
-        button {
-            width: 100%;
-            padding: 14px;
+        .register-btn {
+            grid-column: span 2;
             border: none;
-            border-radius: 10px;
-            background: #4285f4;
+            padding: 16px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
             color: white;
             font-size: 16px;
             font-weight: bold;
@@ -80,25 +202,56 @@
             transition: 0.3s;
         }
 
-        button:hover {
-            background: #3367d6;
-            transform: translateY(-2px);
+        .register-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
         }
 
-        .note {
-            margin-top: 18px;
+        .footer-note {
             text-align: center;
-            color: #94a3b8;
+            margin-top: 22px;
             font-size: 12px;
+            color: #94a3b8;
         }
 
-        @media (max-width: 500px) {
-            .container {
-                padding: 25px;
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 15px;
             }
 
-            h1 {
-                font-size: 26px;
+            .event-header {
+                padding: 30px 25px;
+            }
+
+            .event-header h1 {
+                font-size: 32px;
+            }
+
+            .form-section {
+                padding: 30px 25px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: span 1;
+            }
+
+            .register-btn {
+                grid-column: span 1;
+            }
+
+            .event-details {
+                gap: 10px;
+            }
+
+            .detail {
+                width: 100%;
             }
         }
     </style>
@@ -106,70 +259,229 @@
 
 <body>
 
-    <div class="container">
+    <div class="main-container">
 
-        <h1>Student Feedback</h1>
+        <!-- EVENT HEADER -->
 
-        <p class="subtitle">
-            Share your feedback or get in touch with us
-        </p>
+        <div class="event-header">
 
-        <form action="https://formspree.io/f/mdeknwrv" method="POST">
+            <div class="tag">
+                ✨ TECH EVENT 2026
+            </div>
 
-            <input
-                type="text"
-                name="name"
-                class="input-box"
-                placeholder="Enter your full name"
-                autocomplete="name"
-                required
+            <h1>TechConnect 2026</h1>
+
+            <p>
+                Explore technology, innovation and new ideas.
+                Join students and technology enthusiasts for an
+                exciting learning and networking experience.
+            </p>
+
+            <div class="event-details">
+
+                <div class="detail">
+                    <span>📅 DATE</span>
+                    <strong>October 18, 2026</strong>
+                </div>
+
+                <div class="detail">
+                    <span>⏰ TIME</span>
+                    <strong>10:00 AM – 3:00 PM</strong>
+                </div>
+
+                <div class="detail">
+                    <span>📍 VENUE</span>
+                    <strong>Tech Innovation Hall</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- REGISTRATION FORM -->
+
+        <div class="form-section">
+
+            <div class="form-title">
+                <h2>Reserve Your Spot</h2>
+
+                <p>
+                    Fill in your details below to register for the event.
+                </p>
+            </div>
+
+
+            <form
+                action="https://formspree.io/f/mdeknwrv"
+                method="POST"
+                class="form-grid"
             >
 
-            <input
-                type="email"
-                name="email"
-                class="input-box"
-                placeholder="Enter your email address"
-                autocomplete="email"
-                required
-            >
+                <div class="field">
 
-            <input
-                type="tel"
-                name="phone"
-                class="input-box"
-                placeholder="Enter your phone number"
-                autocomplete="tel"
-                required
-            >
+                    <label for="name">
+                        Full Name
+                    </label>
 
-            <input
-                type="text"
-                name="subject"
-                class="input-box"
-                placeholder="Enter the subject"
-                required
-            >
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
 
-            <textarea
-                name="message"
-                class="input-box"
-                placeholder="Write your feedback or message"
-                required
-            ></textarea>
+                </div>
 
-            <button type="submit">
-                Submit Feedback
-            </button>
 
-        </form>
+                <div class="field">
 
-        <p class="note">
-            Thank you for sharing your valuable feedback.
-        </p>
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="department">
+                        Department
+                    </label>
+
+                    <select
+                        id="department"
+                        name="department"
+                        required
+                    >
+
+                        <option value="">
+                            Select your department
+                        </option>
+
+                        <option value="CSE">
+                            Computer Science & Engineering
+                        </option>
+
+                        <option value="IT">
+                            Information Technology
+                        </option>
+
+                        <option value="ECE">
+                            Electronics & Communication Engineering
+                        </option>
+
+                        <option value="EEE">
+                            Electrical & Electronics Engineering
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label for="event">
+                        Select Event
+                    </label>
+
+                    <select
+                        id="event"
+                        name="event"
+                        required
+                    >
+
+                        <option value="">
+                            Choose an event
+                        </option>
+
+                        <option value="Tech Workshop">
+                            Tech Workshop
+                        </option>
+
+                        <option value="Cybersecurity Seminar">
+                            Cybersecurity Seminar
+                        </option>
+
+                        <option value="AWS Community Event">
+                            AWS Community Event
+                        </option>
+
+                        <option value="Coding Workshop">
+                            Coding Workshop
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label for="message">
+                        Additional Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Any questions or special requests?"
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="register-btn"
+                >
+                    Register for Event →
+                </button>
+
+            </form>
+
+
+            <p class="footer-note">
+                🔒 Please provide only the basic information required for registration.
+            </p>
+
+        </div>
 
     </div>
 
 </body>
 </html>
-
