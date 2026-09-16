@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 6</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe, #eef2ff);
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            padding: 35px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            text-align: center;
+            color: #1e293b;
+            font-size: 30px;
+        }
+
+        .subtitle {
+            margin: 0 0 30px;
+            text-align: center;
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 14px 15px;
+            margin-bottom: 18px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+        }
+
+        .input-box:focus {
+            border-color: #4285f4;
+            box-shadow: 0 0 8px rgba(66, 133, 244, 0.2);
+        }
+
+        textarea.input-box {
+            height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #4285f4;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3367d6;
+            transform: translateY(-2px);
+        }
+
+        .note {
+            margin-top: 18px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Assignment 6</h1>
+
+        <p class="subtitle">
+            Please enter your information
+        </p>
+
+        <form action="https://formspree.io/f/mdeknwrv" method="POST">
+
+            <input
+                type="text"
+                name="name"
+                class="input-box"
+                placeholder="Enter your name"
+                autocomplete="name"
+                required
+            >
+
+            <input
+                type="email"
+                name="email"
+                class="input-box"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+            >
+
+            <input
+                type="tel"
+                name="phone"
+                class="input-box"
+                placeholder="Enter your phone number"
+                autocomplete="tel"
+                required
+            >
+
+            <textarea
+                name="message"
+                class="input-box"
+                placeholder="Enter your message"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Submit
+            </button>
+
+        </form>
+
+        <p class="note">
+            Please enter only basic information.
+        </p>
+
+    </div>
+
+</body>
+</html>
