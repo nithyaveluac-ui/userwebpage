@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Assignment 6</title>
+    <title>Student Feedback & Contact</title>
 
     <style>
         * {
@@ -108,10 +108,10 @@
 
     <div class="container">
 
-        <h1>Assignment 6</h1>
+        <h1>Student Feedback</h1>
 
         <p class="subtitle">
-            Please enter your information
+            Share your feedback or get in touch with us
         </p>
 
         <form action="https://formspree.io/f/mdeknwrv" method="POST">
@@ -120,7 +120,7 @@
                 type="text"
                 name="name"
                 class="input-box"
-                placeholder="Enter your name"
+                placeholder="Enter your full name"
                 autocomplete="name"
                 required
             >
@@ -129,7 +129,7 @@
                 type="email"
                 name="email"
                 class="input-box"
-                placeholder="Enter your email"
+                placeholder="Enter your email address"
                 autocomplete="email"
                 required
             >
@@ -143,24 +143,33 @@
                 required
             >
 
+            <input
+                type="text"
+                name="subject"
+                class="input-box"
+                placeholder="Enter the subject"
+                required
+            >
+
             <textarea
                 name="message"
                 class="input-box"
-                placeholder="Enter your message"
+                placeholder="Write your feedback or message"
                 required
             ></textarea>
 
             <button type="submit">
-                Submit
+                Submit Feedback
             </button>
 
         </form>
 
         <p class="note">
-            Please enter only basic information.
+            Thank you for sharing your valuable feedback.
         </p>
 
     </div>
 
 </body>
 </html>
+
